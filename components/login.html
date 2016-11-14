@@ -1,0 +1,26 @@
+
+    <img src="components/images/test.png" id="logo" class="img-thumbnail" >
+    <div id="loginform">
+    <form action="#/start">
+        <div ng-show="loginByService">
+            <h5 style="text-align: center">Login With our Partners</h5>
+            <img src="components/images/partners.png" width="120" height="50">
+            <br><br>
+            Dienst: <select name="service" >
+                <option>Facebook</option>
+            <option>GitHub</option>
+            </select>
+        </div>
+        Username: <input name="Username" type="text" ng-model="username">
+        Kennwort: <input name="Kennwort" type="text" ng-model="password">
+        <input name="Login" type="submit">
+    </form>
+
+        <a href="#/register">Registrieren</a>
+    <br>
+    <button type="button" class="btn btn-link" ng-hide="loginByService" ng-click="loginByService=true">
+        Login mit anderem Dienst</button>
+
+        <button type="button" class="btn btn-info" ng-show="loginByService" ng-click="loginByService=false">
+            Login With TINYTASK-Account</button>
+</div>

@@ -1,0 +1,26 @@
+
+<div id="starter">
+
+    <ul>
+        <li><a href="">+</a></li>
+        <li><a href="">+</a></li>
+        <li><a href="">+</a></li>
+        <li><a href="">+</a></li>
+        <li><a href="#/"><img src="components/images/logout.png" width="40" height="40"></a></li>
+    </ul>
+
+
+
+    <p>Aufgegebene Tasks</p>
+
+    <p>Angenommene Tasks</p>
+
+    <table class="table" ng-controller="StartCtrl">
+        <tr ng-repeat="mytask in mytasks">
+            <td>{{mytask.id}}</td>
+            <td>{{mytask.name}}</td>
+            <td>{{mytask.money}}</td>
+        </tr>
+    </table>
+
+</div>
