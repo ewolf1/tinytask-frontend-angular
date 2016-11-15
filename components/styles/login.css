@@ -11,12 +11,12 @@
 }
 
 
-#starter {
-    margin-left: 50px;
+#starter-nav {
+    margin-left: 0px;
 }
 
 
-#starter ul {
+#starter-nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -24,11 +24,11 @@
     background-color: #333;
 }
 
-#starter li {
+#starter-nav li {
     float: left;
 }
 
-#starter li a {
+#starter-nav li a {
     display: inline-block;
     color: white;
     text-align: center;
@@ -36,6 +36,12 @@
     text-decoration: none;
 }
 
-#starter li a:hover {
+#starter-nav li a:hover {
     background-color: #111;
+}
+
+.center-me{
+	display:flex;
+	justify-content:center;
+	align-items:center;
 }
