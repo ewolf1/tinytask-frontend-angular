@@ -10,6 +10,7 @@ angular.module('tinytask', ['ngRoute'])
 			.when('/profile', {templateUrl: 'components/profile.html'})
 			.when('/search', {templateUrl: 'components/search.html'})
 			.when('/map', {templateUrl: 'components/map.html'})
+			.when('/createtask', {templateUrl: 'components//createtask.html'})
             .otherwise({ redirectTo: '/'});
     })
 
