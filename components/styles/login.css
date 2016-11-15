@@ -45,3 +45,7 @@
 	justify-content:center;
 	align-items:center;
 }
+
+.column-two{
+	width: 49%;
+}

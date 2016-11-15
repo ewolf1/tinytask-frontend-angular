@@ -3,8 +3,8 @@
 
     <ul>
         <li> <a class="starter-item" href="#/profile" style="width: 170px"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i><span >Your Profile<span></a></li>
-        <li> <a class="starter-item" href="#" style="width: 170px"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Search</a></li>
-		<li> <a class="starter-item" href="#" style="width: 170px; color: lightgreen"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Start</a></li>
+        <li> <a class="starter-item" href="#/search" style="width: 170px"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Search</a></li>
+		<li> <a class="starter-item" href="#/start" style="width: 170px; color: lightgreen"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Start</a></li>
 		<li> <a class="starter-item" href="#" style="width: 170px"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>Map</a></li>
         <li> <a class="starter-item" href="#" style="width: 170px"><i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i>Create Task</a></li>
 		<li> <a class="starter-item" href="#" style="width: 170px"><i class="fa fa-times-circle fa-fw" aria-hidden="true"></i>Logout</a></li>
@@ -15,6 +15,7 @@
     <p><i class="fa fa-spinner fa-2x" style="padding-top: 30px"></i> Aufgegebene Tasks</p>
 	
 	<table class="table" id="starter-" ng-controller="StartCtrl">
+	<th>#Nr</th><th><i class="fa fa-info-circle" ></i> Beschreibung</th><th><i class="fa fa-money"></i> Belohnung</th>
         <tr ng-repeat="mytask in mytasks">
             <td>{{mytask.id}}</td>
             <td>{{mytask.name}}</td>
@@ -32,6 +33,7 @@
     <p><i class="fa fa-check-circle fa-2x" style="padding-top: 15px; color:green"></i> Angenommene Tasks</p>
 
     <table class="table" ng-controller="StartCtrl">
+	<th>#Nr</th><th><i class="fa fa-info-circle" ></i> Beschreibung</th><th><i class="fa fa-money"></i> Belohnung</th>
         <tr ng-repeat="mytask in mytasks">
             <td>{{mytask.id}}</td>
             <td>{{mytask.name}}</td>
