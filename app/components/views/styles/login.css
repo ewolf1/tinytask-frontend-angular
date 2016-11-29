@@ -1,0 +1,57 @@
+#logo {
+    display: block;
+    margin: auto;
+    width: 10%;
+    margin-top: 30px;
+}
+
+#loginform {
+    margin: auto;
+    width: 10%;
+}
+
+
+#starter-nav {
+    margin-left: 0px;
+}
+
+
+#starter-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#starter-nav li {
+    float: left;
+}
+
+#starter-nav li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#starter-nav li a:hover {
+    background-color: #111;
+}
+
+.center-me{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.column-two{
+	width: 49%;
+}
+
+.btn-xl {
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 10px;
+}
