@@ -1,0 +1,53 @@
+<div id="starter-nav">
+
+    <ul>
+        <li> <a class="starter-item" href="profile" style="width: 170px"><i class="fa fa-user-circle fa-fw" aria-hidden="true"></i><span>Your Profile</span></a></li>
+        <li> <a class="starter-item" href="search" style="width: 170px; color: lightgreen"><i class="fa fa-search fa-fw" aria-hidden="true"></i>Search</a></li>
+		<li> <a class="starter-item" href="start" style="width: 170px"><i class="fa fa-home fa-fw" aria-hidden="true"></i>Start</a></li>
+		<li> <a class="starter-item" href="map" style="width: 170px"><i class="fa fa-map-marker fa-fw" aria-hidden="true"></i>Map</a></li>
+        <li> <a class="starter-item" href="createtask" style="width: 170px"><i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i>Create Task</a></li>
+		<li> <a class="starter-item" href="" style="width: 170px"><i class="fa fa-times-circle fa-fw" aria-hidden="true"></i>Logout</a></li>
+    </ul>
+	
+<h2 class="center-me">Konfiguriere deine Suche</h2>
+	<div class="center-me" style="margin-top: 20px">
+			
+		
+		<div class="column-two" style="margin-left:100px">
+			<div class="center-me">
+				Radius: 	
+							
+							<button class="btn btn-info">05km</button>
+							<button class="btn btn-default">10km</button>
+							<button class="btn btn-default">15km</button>
+							<button class="btn btn-default">20km</button>
+			</div>
+		</div>
+		<div class="column-two">
+			<div class="center-me">
+				Startzeit:<input type="text" value="Xx:Xx">
+			</div>
+		</div>	
+	</div>
+	<hr>
+	
+	<div class="center-me" style="margin-top: 20px">
+		<h3><i class="fa fa-flag"></i> Verfuegbare Tasks</h3>
+	</div>
+	<br>
+		<table class="table" id="starter-" ng-controller="StartCtrl">
+        <th>#Nr</th><th><i class="fa fa-info-circle" ></i> Beschreibung</th><th><i class="fa fa-money"></i> Belohnung</th>
+		<tr ng-repeat="mytask in mytasks">
+            <td>{{mytask.id}}</td>
+            <td>{{mytask.name}}</td>
+            <td>{{mytask.money}}</td>
+        </tr>
+		<tr ng-repeat="mytask in mytasks">
+            <td>{{mytask.id}}</td>
+            <td>{{mytask.name}}</td>
+            <td>{{mytask.money}}</td>
+        </tr>
+    </table>
+
+	
+	</div>

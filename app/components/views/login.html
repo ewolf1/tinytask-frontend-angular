@@ -1,0 +1,28 @@
+
+    <img src="/images/test.png" id="logo" class="img-thumbnail" >
+    <div id="loginform">
+    <form action="#/start">
+        <div ng-show="loginByService">
+            <h5 style="text-align: center">Login With our Partners</h5>
+            <img src="components/images/git.png" width="50" height="50" style="filter: grayscale(100%)" ng-style="facebook === true && {'filter': 'grayscale(100%)'}">
+			<img src="components/images/fb.png" width="50" height="50" ng-style="facebook === true && {'filter': 'grayscale(100%)'}">
+            <br><br>
+            Dienst: <select name="service" >
+                <option ng-click="facebook=true">Facebook</option>
+            <option ng-click="facebook=false">GitHub</option>
+            </select>
+        </div>
+        Username: <input name="Username" type="text" ng-model="username">
+        <!--<input name="Login" type="submit">-->
+		<a class="btn btn-default" href="start">LOGIN</a>
+    </form>
+
+        <a href="register">Registrieren</a>
+    <br>
+    <button type="button" class="btn btn-link" ng-hide="loginByService" ng-click="loginByService=true"  >
+        Login mit anderem Dienst</button>
+
+        <button type="button" class="btn btn-info" ng-show="loginByService" ng-click="loginByService=false">
+            Login With TINYTASK-Account</button>
+</div>
+
