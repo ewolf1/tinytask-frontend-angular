@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Auth} from './service/auth.service';
 
 @Component({
   selector: 'my-app',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['app/components/views/styles/login.css']
 })
 export class LoginComponent  { 
-
+	constructor(private auth: Auth) {}
  }
