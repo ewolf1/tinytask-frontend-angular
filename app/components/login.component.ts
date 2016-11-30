@@ -13,5 +13,4 @@ import {Inject} from '@angular/core';
 export class LoginComponent  { 
 
 	constructor(private auth: Auth) {}
-	console.log(auth);
  }
