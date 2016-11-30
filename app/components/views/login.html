@@ -19,7 +19,7 @@
 
         <a href="register">Registrieren</a>
     <br>
-    <button type="button" class="btn btn-link" (click)="auth.login()" *ngIf="!auth.authenticated()">
+    <button type="button" class="btn btn-link" onclick="auth.login()">
         Login mit anderem Dienst</button>
 
         <button type="button" class="btn btn-info" ng-show="loginByService" ng-click="loginByService=false">
