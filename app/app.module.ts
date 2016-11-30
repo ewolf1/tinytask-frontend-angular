@@ -3,7 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }    from '@angular/forms';
 import { RouterModule}   from '@angular/router';
 import { HttpModule } from '@angular/http';
-import { AUTH_PROVIDERS } from 'angular2-jwt';
+
+
 
 import { AppComponent }  from './app.component';
 import {RegisterComponent} from './components/register.component';
@@ -14,12 +15,20 @@ import {SearchComponent} from './components/search.component';
 import {MapComponent} from './components/map.component';
 import {CreateTaskComponent} from './components/createtask.component';
 
+import {Auth} from './components/service/auth.service';
+import { AUTH_PROVIDERS }      from 'angular2-jwt';
+import { AuthConfig, AuthHttp } from 'angular2-jwt';
+
 @NgModule({
   imports:      [ BrowserModule,
 FormsModule,
     RouterModule.forRoot([
       {
         path: '',
+        component: LoginComponent
+      },
+	  {
+        path: 'login',
         component: LoginComponent
       },
 	  {path: 'register', component: RegisterComponent},
@@ -41,6 +50,6 @@ CreateTaskComponent
   ],
   providers: [AUTH_PROVIDERS],
   
-  bootstrap:    [ AppComponent ]
+  bootstrap:    [ AppComponent,LoginComponent]
 })
 export class AppModule { }

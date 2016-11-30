@@ -1,15 +1,17 @@
 // app/auth.service.ts
 
 import { Injectable }      from '@angular/core';
-import { tokenNotExpired } from 'angular2-jwt';
+import { AuthHttp,tokenNotExpired } from 'angular2-jwt';
 
 // Avoid name not found warnings
 declare var Auth0Lock: any;
 
+//let Auth0Lock = require('auth0-lock').default;
+
 @Injectable()
 export class Auth {
   // Configure Auth0
-  lock = new Auth0Lock('YOUR_CLIENT_ID', 'YOUR_AUTH0_DOMAIN', {});
+  lock = new Auth0Lock('Bp4PPmbo5IXZumI4wrZ2Asi7mJgG9Dk3', 'tinytask.eu.auth0.com', {});
 
   constructor() {
     // Add callback for lock `authenticated` event
