@@ -13,11 +13,5 @@ import {Inject} from '@angular/core';
 export class LoginComponent  { 
 
 	constructor(private auth: Auth) {}
-	
-	if(localStorage.getItem("id_token")){
-		window.location.href="start";
-	}
-	if(auth.authenticated){
-		window.location.href="start";
-	}
+
  }
