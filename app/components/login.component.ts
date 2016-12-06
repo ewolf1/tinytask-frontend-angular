@@ -4,7 +4,7 @@ import {Inject} from '@angular/core';
 
 @Component({
   selector: 'my-app',
-  template: '<a class="btn btn-success" (click)="auth.login()">Log In</a>',
+  template: '<a class="btn btn-success" (click)="auth.login()">Log In</a><a href="start" *ngIf="auth.authenticated()">start</a>',
 	providers: [Auth],
   styleUrls: ['app/components/views/styles/login.css'],
 
@@ -13,4 +13,11 @@ import {Inject} from '@angular/core';
 export class LoginComponent  { 
 
 	constructor(private auth: Auth) {}
+	
+	if(localStorage.getItem("id_token")){
+		window.location.href="start";
+	}
+	if(auth.authenticated){
+		window.location.href="start";
+	}
  }

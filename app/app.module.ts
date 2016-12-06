@@ -50,6 +50,6 @@ CreateTaskComponent
   ],
   providers: [AUTH_PROVIDERS],
   
-  bootstrap:    [ AppComponent,LoginComponent]
+  bootstrap:    [ AppComponent]
 })
 export class AppModule { }
