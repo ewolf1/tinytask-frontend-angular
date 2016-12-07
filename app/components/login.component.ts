@@ -37,9 +37,9 @@ export class LoginComponent  {
 	}
 	
 	private initenter(data: any){
-		console.log("blabbalal");
-		console.log(data);
-		this.registered = true;
+		//console.log("blabbalal");
+		//console.log(data);
+		//this.registered = true;
 	}
 	
 	
