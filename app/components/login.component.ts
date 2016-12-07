@@ -7,7 +7,7 @@ import {Observable}     from 'rxjs/Observable';
 
 @Component({
   selector: 'my-app',
-  template: '<a class="btn btn-success" (click)="auth.login()">Log In</a><a href="start" *ngIf="auth.authenticated()">start</a><button (click)="testFunction()">testing</button>',
+  template: '<a class="btn btn-success" (click)="auth.login()">Log In</a><a class="btn btn-success" href="start" *ngIf="this.registered">ENTER TINYTASK</a><button class="btn btn-danger" (click)="testFunction()">Test your connection</button>',
 	providers: [Auth],
   styleUrls: ['app/components/views/styles/login.css'],
 
@@ -19,7 +19,7 @@ export class LoginComponent  {
 	private http: Http) {
 	}
 	
-	
+	private registered = false;
 
 	private testFunction(){
 		let string = "Bearer ";
@@ -31,7 +31,7 @@ export class LoginComponent  {
 		let options = new RequestOptions({ headers: headers });
 		console.log(headers);
 		 let result = this.http.get("https://tinytaskrest.herokuapp.com/", options)
-		 .subscribe( data  => console.log(data),
+		 .subscribe( data  => console.log(data); this.registered = true;,
 					 error =>  console.log("erorro"));
 		 
 	}
