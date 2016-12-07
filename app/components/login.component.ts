@@ -31,9 +31,15 @@ export class LoginComponent  {
 		let options = new RequestOptions({ headers: headers });
 		console.log(headers);
 		 let result = this.http.get("https://tinytaskrest.herokuapp.com/", options)
-		 .subscribe( data  => console.log(data); this.registered = true;,
+		 .subscribe( data  => {console.log(data); this.registered = true;this.initenter(data);},
 					 error =>  console.log("erorro"));
 		 
+	}
+	
+	private initenter(data: any){
+		console.log("blabbalal");
+		console.log(data);
+		this.registered = true;
 	}
 	
 	
