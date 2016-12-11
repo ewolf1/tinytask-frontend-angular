@@ -19,6 +19,8 @@ import {Auth} from './components/service/auth.service';
 import { AUTH_PROVIDERS }      from 'angular2-jwt';
 import { AuthConfig, AuthHttp } from 'angular2-jwt';
 
+import {RestService} from './components/service/restService';
+
 @NgModule({
   imports:      [ BrowserModule,
 FormsModule,

@@ -3,6 +3,7 @@
  * changes by karstenAMF/oxanaZh
  */
 import {Http, Headers} from '@angular/http';
+import {RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 export class RestService {
@@ -11,16 +12,17 @@ export class RestService {
   }
 
   private header: Headers;
+  private authy = "";
 
   constructor(private http:Http) {
     this.header = new Headers;
-    this.header.append('Content-Type', 'application/json');
-    this.header.append('Accept', 'application/json');
-    this.header.append('Authorization', '');
+    //this.header.append('Content-Type', 'application/json');
+    //this.header.append('Accept', 'application/json');
   }
 
-  authorizationHeader(auth: any){
-    this.header.append('Authorization', auth);
+  authorizationHeader(token: any){
+    this.header.append('Authorization', token);
+	this.authy = token;
   }
 /*
 // Einen einzelnen Task holen
@@ -74,8 +76,16 @@ export class RestService {
 */
   //Gibt bestimmten Benutzer wieder
   getUserSingle(user_id:any){
+	  console.log("this header");
+	  console.log(this.header);
+	  console.log(this.header.authorization);
     var url = 'https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id);
-    var response = this.http.get(url).map(res => res.json());
+    //var response = this.http.get(url).map(res => res.json());
+	let response = "";
+	let options = new RequestOptions({ headers: this.header });
+	this.http.get(url,options)
+		 .subscribe( data  => {console.log(data); response=data;},
+					 error =>  console.log("erorro"));
     return response;
   }
 /*
