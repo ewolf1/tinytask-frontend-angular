@@ -78,10 +78,10 @@ export class RestService {
   getUserSingle(user_id:any){
 	  console.log("this header");
 	  console.log(this.header);
-	  console.log(this.header.authorization);
+	 // console.log(this.header.authorization);
     var url = 'https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id);
     //var response = this.http.get(url).map(res => res.json());
-	let response = "";
+	let response:any;
 	let options = new RequestOptions({ headers: this.header });
 	this.http.get(url,options)
 		 .subscribe( data  => {console.log(data); response=data;},
