@@ -44,7 +44,8 @@ export class ProfileComponent  {
 		this.rest.getUserSingle(user_id)
 		.subscribe((data:any) =>{result = data; console.log("inner"); console.log(result); this.fillForm(data);});
 		
-		
+		this.rest.getUserRating(user_id)
+		.subscribe((data:any) =>{this.loadRatings(data);});
 		/*let string = "Bearer ";
 		let token = localStorage.getItem('id_token');
 		console.log(token);
@@ -63,6 +64,15 @@ export class ProfileComponent  {
 		this.user.name = data.displayName;
 		this.user.email = data.email;
 		this.user.img = data.picture;
+	}
+	
+	private loadRatings(data:any){
+		if(data.results==0){
+			this.user.ratings = "Bisher hat dich noch kein anderer User bewertet!";
+		}
+		else{
+			this.user.ratings = data;
+		}
 	}
 	
  }

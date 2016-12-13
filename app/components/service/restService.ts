@@ -66,14 +66,14 @@ export class RestService {
     var response = this.http.get(url).map(res => res.json());
     return response;
   }
-
-  //Eine Nutzer Bewertung holen
-  getUserRating(user_id) {
-    var url = 'https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id)+'/rating';
-    var response = this.http.get(url).map(res => res.json());
-    return response;
-  }
 */
+  //Eine Nutzer Bewertung holen
+  getUserRating(user_id:any) {
+    let url = 'https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id)+'/ratings';
+	let options = new RequestOptions({ headers: this.header });
+	return this.http.get(url,options).map(res => res.json());
+  }
+
   //Gibt bestimmten Benutzer wieder
   getUserSingle(user_id:any){
 	  console.log("this header");
