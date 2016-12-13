@@ -33,7 +33,6 @@ export class LoginComponent  {
 		 let result = this.http.get("https://tinytaskrest.herokuapp.com/", options)
 		 .subscribe( data  => {console.log(data); this.registered = true;this.initenter(data);},
 					 error =>  console.log("erorro"));
-		 
 	}
 	
 	private initenter(data: any){

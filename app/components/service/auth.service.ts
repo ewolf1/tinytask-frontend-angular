@@ -17,6 +17,10 @@ export class Auth {
     // Add callback for lock `authenticated` event
     this.lock.on("authenticated", (authResult: any) => {
       localStorage.setItem('id_token', authResult.idToken);
+	  console.log("Authresult0");
+	  console.log(authResult);
+	  console.log(authResult.idTokenPayload.sub);
+	  localStorage.setItem('user_id',authResult.idTokenPayload.sub);
     });
   }
 
@@ -34,6 +38,7 @@ export class Auth {
   public logout() {
     // Remove token from localStorage
     localStorage.removeItem('id_token');
+	localStorage.removeItem('user_id');
   };
   
  
