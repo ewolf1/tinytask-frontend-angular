@@ -31,13 +31,14 @@ export class RestService {
     var response = this.http.get(url).map(res => res.json());
     return response;
   }
-
+*/
   //Alle tasks holen
   getAllTasks(){
     var url = 'https://tinytaskrest.herokuapp.com/tasks/';
-    var response = this.http.get(url).map(res => res.json());
-    return response;
+	let options = new RequestOptions({ headers: this.header });
+	return this.http.get(url,options).map(res => res.json());
   }
+  /*
 
   // Längen und  Breitengrad eines Tasks holen
   getTaskPosition(task_id){
