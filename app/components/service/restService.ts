@@ -80,13 +80,15 @@ export class RestService {
 	  console.log(this.header);
 	 // console.log(this.header.authorization);
     var url = 'https://tinytaskrest.herokuapp.com/users/' + encodeURI(user_id);
-    //var response = this.http.get(url).map(res => res.json());
 	let response:any;
 	let options = new RequestOptions({ headers: this.header });
-	this.http.get(url,options)
-		 .subscribe( data  => {console.log(data); response=data;},
-					 error =>  console.log("erorro"));
-    return response;
+	/*this.http.get(url,options)
+		 .subscribe( data  => {console.log(data); response=data; return response},
+					error =>  {console.log("erorro"); return "anything";});*/
+	//this.http.get(url,options)
+	//.map(data => {return data;});
+	return this.http.get(url,options).map(res => res.json());
+
   }
 /*
   // Neuen Task erstellen , wahrscheinlich überarbeiten

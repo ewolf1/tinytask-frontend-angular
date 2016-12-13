@@ -11,13 +11,14 @@ import {User} from "./class/user";
 @Component({
   selector: 'my-app',
   templateUrl: 'app/components/views/profile.html',
-  providers: [Auth, RestService],
+  providers: [Auth, RestService, User],
   styleUrls: ['app/components/views/styles/login.css']
 })
 export class ProfileComponent  { 
 	constructor(private auth:Auth, 
 	private rest:RestService, 
-	private http:Http){
+	private http:Http,
+	private user:User){
 		this.checkForLogin();
 		this.getUser();
 	}
@@ -35,10 +36,15 @@ export class ProfileComponent  {
 		string = string + token;
 		console.log(string);
 		this.rest.authorizationHeader(string);
-		let result = this.rest.getUserSingle(token);
+		let user_id = localStorage.getItem('user_id');
+		//let result = this.rest.getUserSingle(user_id);
+		let result = "";
+		//this.rest.getUserSingle(user_id).subscribe((data:any)=>{result = data});
 		
-		console.log("RESULT INC");
-		console.log(result);
+		this.rest.getUserSingle(user_id)
+		.subscribe((data:any) =>{result = data; console.log("inner"); console.log(result); this.fillForm(data);});
+		
+		
 		/*let string = "Bearer ";
 		let token = localStorage.getItem('id_token');
 		console.log(token);
@@ -50,6 +56,13 @@ export class ProfileComponent  {
 		let result = this.http.get("https://tinytaskrest.herokuapp.com/", options)
 		 .subscribe( data  => {console.log(data); this.registered = true;this.initenter(data);},
 					 error =>  console.log("erorro"));*/
+	}
+	
+	private fillForm(data:any){
+		this.user.id = data.id;
+		this.user.name = data.displayName;
+		this.user.email = data.email;
+		this.user.img = data.picture;
 	}
 	
  }
